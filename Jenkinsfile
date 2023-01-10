@@ -12,7 +12,7 @@ pipeline {
          }      
          stage('Upload to AWS') {
               steps {
-                  withAWS(region:'us-east-1',credentials:'jenkins_cred') {
+                  withAWS(region:'us-east-1',credentials:'jen_cred') {
                   sh 'echo "Uploading content with AWS creds"'
                       s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'app.py', bucket:'mywebassetsbucket')
                   }
